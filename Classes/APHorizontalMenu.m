@@ -162,12 +162,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
         cell.textLabel.textAlignment=NSTextAlignmentCenter;
         cell.transform = CGAffineTransformMakeRotation(M_PI_2);
+        cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
+        cell.textLabel.numberOfLines = 3;
+        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     }
     
     cell.textLabel.font = self.textFont;
     cell.textLabel.textColor = self.textColor;
     cell.textLabel.highlightedTextColor = self.textSelectedColor;
+
     UIView *bgColorView = [[UIView alloc] init];
     bgColorView.backgroundColor = self.cellSelectedColor;
     bgColorView.layer.masksToBounds = YES;
